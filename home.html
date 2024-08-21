@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elly Editora</title>
+    <link href="src/css/styles.css" rel="stylesheet">
+    <link rel="icon" href="src/icon/bunny-girl-icon.svg" type="image/svg+xml">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body data-theme="light" class="bg-cover bg-center bg-no-repeat flex flex-col min-h-screen items-center justify-center" style="background-image: url('./src/img/bg2.png'); background-size: cover;">
+<!-- Preloader -->
+<div id="preloader">
+    <video id="preloader-video" src="src/videos/Sakurajima_Mai_Entrada.mp4"></video>
+    <div id="play-button"></div>
+    <div class="custom-controls">
+        <button id="play-pause">Play</button>
+        <input type="range" id="progress-bar" value="0" max="100">
+        <div class="volume-control">
+            <button id="volume-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 9V15H7L12 20V4L7 9H3Z" fill="white"/>
+                    <path d="M16.5 12C16.5 10.6193 15.8807 9.5 15 8.82843V15.1716C15.8807 14.5 16.5 13.3807 16.5 12Z" fill="white"/>
+                    <path d="M19.5 12C19.5 8.96243 17.5376 6.5 15 5.17157V18.8284C17.5376 17.5 19.5 15.0376 19.5 12Z" fill="white"/>
+                </svg>            </button>
+            <button id="mute-icon" class="hidden">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 9V15H7L12 20V4L7 9H3Z" fill="white"/>
+                    <path d="M18 6L6 18" stroke="red" stroke-width="2"/>
+                    <path d="M6 6L18 18" stroke="red" stroke-width="2"/>
+                </svg>
+            </button>
+            <input type="range" id="volume-slider" value="100" max="100" class="hidden">
+        </div>
+        <button id="fullscreen-toggle">Fullscreen</button>
+        <button id="mute-toggle">Mute</button>
+        <select id="playback-speed">
+            <option value="0.5">0.5x</option>
+            <option value="1" selected>1x</option>
+            <option value="1.5">1.5x</option>
+            <option value="2">2x</option>
+        </select>
+        <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div id="main-content" style="display: none;">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-75 p-4 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold flex items-center text-white" data-en="Elly Publisher" data-pt="Elly Editora">
+                <img src="src/icon/bunny-girl-icon.svg" alt="Icon" class="w-8 h-8 mr-2">
+                Elly Editora
+            </h1>
+            <nav>
+                <ul class="flex space-x-4 text-white">
+                    <li><a href="#home" class="hover:text-gray-400" data-en="Home" data-pt="Início">Início</a></li>
+                    <li><a href="#about" class="hover:text-gray-400" data-en="About" data-pt="Sobre">Sobre</a></li>
+                    <li><a href="#services" class="hover:text-gray-400" data-en="Services" data-pt="Serviços">Serviços</a></li>
+                    <li><a href="#contact" class="hover:text-gray-400" data-en="Contact" data-pt="Contato">Contato</a></li>
+                    <li>
+                        <button id="language-toggle" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105">
+                            PT
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col items-center justify-center w-full mt-16">
+        <!-- Support Me Section -->
+        <section id="support-me" class="my-8 text-center w-full px-4">
+            <div class="inline-block bg-white dark:bg-slate-800 p-6 rounded">
+                <h2 class="text-3xl font-bold mb-4 text-yellow-400 dark:text-white" data-en="Support me!" data-pt="Apoie-me!">Apoie-me!</h2>
+                <p class="text-slate-500 dark:text-slate-400 mb-4" data-en="The pack contains elements I use in my edits. It includes a video project that will make your editing easier, just copy and paste and it's ready!" data-pt="No Pack tem elementos que utilizo nas minhas edições. Contêm um Projeto de vídeo que vai facilitar a sua edição, é só copiar e colar que esta pronto!">No Pack tem elementos que utilizo nas minhas edições. Contêm um Projeto de vídeo que vai facilitar a sua edição, é só copiar e colar que esta pronto!</p>
+                <a href="https://pay.kiwify.com.br/7r2BTsF" target="_blank" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg" data-en="Buy Now" data-pt="Compre Agora">Compre Agora</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="my-8 text-center w-full px-4">
+            <h2 class="text-2xl font-bold mb-4 dark:text-white" data-en="About Me" data-pt="Sobre Mim">Sobre Mim</h2>
+            <p class="text-lg dark:text-slate-400" data-en="I am a professional video editor with a few years of experience. I really enjoy editing and aspire to be a future programmer (developer). Sorry, I'm a bit funny, LOL. These are my projects! If you need anything or have any questions, send me a message on social media, which are on the right side of the page." data-pt="Sou uma editora de vídeo profissional com alguns anos de experiência eu gosto muito de editar e quero ser uma futura garota de programa(desenvolvedora) desculpem sou meio engraçadinha, KJKKKKKKKKKKKKKK, esses são meus projetos! se vocês quiserem alguma coisa ou quiserem fazer perguntas, me mandem mensagem nas redes sociais, que estão do lado direito na lateral direita da página">Sou uma editora de vídeo profissional com alguns anos de experiência eu gosto muito de editar e quero ser uma futura garota de programa(desenvolvedora) desculpem sou meio engraçadinha, KJKKKKKKKKKKKKKK, esses são meus projetos! se vocês quiserem alguma coisa ou quiserem fazer perguntas, me mandem mensagem nas redes sociais, que estão do lado direito na lateral direita da página</p>        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="my-8 text-center w-full px-4">
+            <h2 class="text-2xl font-bold mb-4 dark:text-white" data-en="Portfolio" data-pt="Portfólio">Portfólio</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <!-- Portfolio Item -->
+                <div class="bg-gray-800 dark:bg-slate-800 p-4 rounded flex flex-col items-center w-full sm:w-4/5 md:w-2/3 lg:w-1/2">
+                    <video controls class="w-full">
+                        <source src="src/videos/projeto1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="fixed bottom-0 left-0 w-full bg-gray-900 bg-opacity-75 p-2 text-center text-white">
+        <div class="flex justify-between items-center h-full">
+            <p class="mx-auto dark:text-slate-400" data-en="&copy; 2024 Elly Editora. All rights reserved." data-pt="&copy; 2024 Elly Editora. Todos os direitos reservados.">&copy; 2024 Elly Editora. Todos os direitos reservados.</p>
+            <div class="flex space-x-4">
+                <a href="mailto:ellycontatosz@gmail.com" class="text-white hover:text-gray-400 transform transition-transform duration-300 hover:scale-125">
+                    <img src="src/icon/correspondencia.svg" alt="Email" class="w-6 h-6">
+                </a>
+                <a href="https://www.instagram.com/ellyminada/" target="_blank" class="text-white hover:text-gray-400 transform transition-transform duration-300 hover:scale-125">
+                    <img src="src/icon/instagram.svg" alt="Instagram" class="w-6 h-6">
+                </a>
+                <a href="https://x.com/ellyvfx" target="_blank" class="text-white hover:text-gray-400 transform transition-transform duration-300 hover:scale-125">
+                    <img src="src/icon/twitter.svg" alt="Twitter" class="w-6 h-6">
+                </a>
+                <a href="https://www.youtube.com/@ellyminada" target="_blank" class="text-white hover:text-gray-400 transform transition-transform duration-300 hover:scale-125">
+                    <img src="src/icon/youtube.svg" alt="YouTube" class="w-6 h-6">
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="src/js/scripts.js"></script>
+<script src="src/js/language-toggle.js"></script>
+<script src="src/js/theme-toggle.js"></script>
+</body>
+</html>
